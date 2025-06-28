@@ -1,0 +1,15 @@
+{
+    "name": "lara-care/schema-visualizr",
+    "description": "An UML package for larael helpping with the different diagrams visualization",
+    "autoload": {
+        "psr-4": {
+            "LaraCare\\SchemaVisualizr\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Khenson"
+        }
+    ],
+    "require": {}
+}
