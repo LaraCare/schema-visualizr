@@ -13,6 +13,11 @@ class SchemaVisualizrProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                \LaraCare\SchemaVisualizr\Commands\VisualizrCommand::class,
+            ]);
+        }
         // $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         // $this->loadViewsFrom(__DIR__.'/../views', 'inspire');
     }
