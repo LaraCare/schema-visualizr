@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace LaraCare\SchemaVisualizr\Providers;
 
@@ -18,6 +18,12 @@ class SchemaVisualizrProvider extends ServiceProvider
                 \LaraCare\SchemaVisualizr\Commands\VisualizrCommand::class,
             ]);
         }
+
+        // Register routes
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+
+        // Register views
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'schema-visualizr');
         // $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         // $this->loadViewsFrom(__DIR__.'/../views', 'inspire');
     }
