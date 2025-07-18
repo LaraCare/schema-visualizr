@@ -9,3 +9,6 @@ Route::get('/class-diagram', function () {
 
     return view('schema-visualizr::diagram', ['uml' => $uml]);
 });
+Route::get('/sv', function () {
+    return view('schema-visualizr::layouts.app');
+});

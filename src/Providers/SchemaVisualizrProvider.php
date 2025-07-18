@@ -24,7 +24,9 @@ class SchemaVisualizrProvider extends ServiceProvider
 
         // Register views
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'schema-visualizr');
-        // $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        // $this->loadViewsFrom(__DIR__.'/../views', 'inspire');
+        // ✅ Publish CSS/JS assets
+        $this->publishes([
+            __DIR__.'/../../public' => public_path('vendor/lara-care/schema-visualizr'),
+        ], 'schema-visualizr-assets');
     }
 }
