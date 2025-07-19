@@ -12,3 +12,10 @@ Route::get('/class-diagram', function () {
 Route::get('/sv', function () {
     return view('schema-visualizr::layouts.app');
 });
+Route::get('/sv/diagrams', function () {
+    return view('schema-visualizr::diagram.index');
+});
+
+Route::get('/sv/contact', function () {
+    return view('schema-visualizr::contact');
+});
