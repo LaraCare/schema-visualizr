@@ -73,7 +73,7 @@
     <meta property="og:image:height" content="1080" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Chronark" />
+    <meta name="twitter:title" content="Schema-visualizr" />
     <meta
       name="twitter:description"
       content="Co-founder of unkey.dev and founder of planetfall.io"
@@ -97,11 +97,11 @@
         <ul class="flex items-center justify-center gap-4">
           <a
             class="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-            href="{{URL('/sv/diagrams')}}"
+            href="{{URL('/svr/diagrams')}}"
             >Diagrams</a
           ><a
             class="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-            href="/sv/contact"
+            href="#"
             >Contact</a
           >
         </ul>
@@ -187,7 +187,7 @@
     <script>
       self.__next_f.push([
         1,
-        '6:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"chronark.com"}],["$","meta","2",{"name":"description","content":"Co-founder of unkey.dev and founder of planetfall.io"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"chronark.com"}],["$","meta","7",{"property":"og:description","content":"Co-founder of unkey.dev and founder of planetfall.io"}],["$","meta","8",{"property":"og:url","content":"https://chronark.com"}],["$","meta","9",{"property":"og:site_name","content":"chronark.com"}],["$","meta","10",{"property":"og:locale","content":"en-US"}],["$","meta","11",{"property":"og:image","content":"https://chronark.com/og.png"}],["$","meta","12",{"property":"og:image:width","content":"1920"}],["$","meta","13",{"property":"og:image:height","content":"1080"}],["$","meta","14",{"property":"og:type","content":"website"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"Chronark"}],["$","meta","17",{"name":"twitter:description","content":"Co-founder of unkey.dev and founder of planetfall.io"}],["$","meta","18",{"name":"twitter:image","content":"https://chronark.com/og.png"}],["$","meta","19",{"name":"twitter:image:width","content":"1920"}],["$","meta","20",{"name":"twitter:image:height","content":"1080"}],["$","link","21",{"rel":"shortcut icon","href":"/favicon.png"}],["$","meta","22",{"name":"next-size-adjust"}]]\n',
+        '6:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"chronark.com"}],["$","meta","2",{"name":"description","content":"Co-founder of unkey.dev and founder of planetfall.io"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"chronark.com"}],["$","meta","7",{"property":"og:description","content":"Co-founder of unkey.dev and founder of planetfall.io"}],["$","meta","8",{"property":"og:url","content":"https://chronark.com"}],["$","meta","9",{"property":"og:site_name","content":"chronark.com"}],["$","meta","10",{"property":"og:locale","content":"en-US"}],["$","meta","11",{"property":"og:image","content":"https://chronark.com/og.png"}],["$","meta","12",{"property":"og:image:width","content":"1920"}],["$","meta","13",{"property":"og:image:height","content":"1080"}],["$","meta","14",{"property":"og:type","content":"website"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"Schema-visualizr"}],["$","meta","17",{"name":"twitter:description","content":"Co-founder of unkey.dev and founder of planetfall.io"}],["$","meta","18",{"name":"twitter:image","content":"https://chronark.com/og.png"}],["$","meta","19",{"name":"twitter:image:width","content":"1920"}],["$","meta","20",{"name":"twitter:image:height","content":"1080"}],["$","link","21",{"rel":"shortcut icon","href":"/favicon.png"}],["$","meta","22",{"name":"next-size-adjust"}]]\n',
       ]);
     </script>
     <script>
