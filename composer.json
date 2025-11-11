@@ -1,6 +1,8 @@
 {
     "name": "lara-care/schema-visualizr",
     "description": "An UML package for larael helpping with the different diagrams visualization",
+    "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "LaraCare\\SchemaVisualizr\\": "src/"
@@ -8,8 +10,19 @@
     },
     "authors": [
         {
-            "name": "Khenson"
+            "role": "Developer",
+            "name": "Jery Foto",
+            "email": "jeryfoto@gmail.com",
+            "homepage": "https://jery-portal.vrecel.app/"
         }
     ],
-    "require": {}
+    "require": {},
+    "require-dev": {},
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    }
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace LaraCare\SchemaVisualizr\Services;
 

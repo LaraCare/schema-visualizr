@@ -165,7 +165,7 @@
             </div>
 
             <div class="mermaid">
-            %%{
+            {{-- %%{
               init: {
                 'theme': 'base',
                 'themeVariables': {
@@ -178,7 +178,7 @@
                 },
                 'fontFamily': 'monospace'
               }
-            }%%
+            }%% --}}
             {{-- classDiagram
                 class SchemaVisualizerService {
                     +getDatabaseTables()
@@ -219,7 +219,7 @@
                 TablesLivewire --> SchemaVisualizerService: uses
                 SchemaVisualizerProvider --> SchemaVisualizerService: registers --}}
 
-                classDiagram
+                {{-- classDiagram
                 Animal <|-- Duck
                 Animal <|-- Fish
                 Animal <|-- Zebra
@@ -249,7 +249,7 @@
                 Duck "1" --> "0..*" Fish : preys on
                 Fish "1" --> "0..*" Zebra : coexists with
                 Zebra "1" --> "1" Animal : related to
-                Zebra "1" --> "1" Animal : related to
+                Zebra "1" --> "1" Animal : related to --}}
                 {{-- Zebra "1" --> "1" Animal : related to --}}
 
             </div>
