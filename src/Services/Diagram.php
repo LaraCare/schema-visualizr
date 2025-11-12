@@ -33,7 +33,7 @@ init: {
         'primaryColor': '#257abbff',
         'primaryTextColor': '#fff',
         'primaryBorderColor': '#ffdbdbff',
-        'lineColor': '#835700ff',
+        'lineColor': '#fff6e4ff',
         'secondaryColor': '#006100',
         'tertiaryColor': '#fff'
     },
