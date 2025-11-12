@@ -82,6 +82,8 @@ classDiagram
     Post --> User : BelongsTo
 ```
 
+
+
 # 🧑‍💻 Author
 
 Jery FOTO
@@ -101,5 +103,5 @@ Your feedback helps this package evolve intelligently.
 
 - 🧩 Contributions: Fork, improve, and send a PR — every contribution counts.
 
-- 📧 Direct Contact: jeryfoto.dev@gmail.com
+- 📧 Direct Contact: <a href="https://jery-portal.vercel.app/#contact">Contact Me</a>
  (for professional collaboration)
