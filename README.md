@@ -81,3 +81,25 @@ classDiagram
     User --> Post : HasMany
     Post --> User : BelongsTo
 ```
+
+# 🧑‍💻 Author
+
+Jery FOTO
+AI/ML & IoT Developer | Laravel Backend Engineer
+📧 [jery@example.com
+]
+🌐 https://jery-portal.vercel.app
+
+# ⭐ Contribute
+
+Pull requests are welcome!
+If you have new ideas for schema visualization or AI-assisted architecture diagrams, open an issue or PR.
+
+# 💬 Feedback & Support
+
+Your feedback helps this package evolve intelligently.
+
+- 🧩 Contributions: Fork, improve, and send a PR — every contribution counts.
+
+- 📧 Direct Contact: jeryfoto.dev@gmail.com
+ (for professional collaboration)
