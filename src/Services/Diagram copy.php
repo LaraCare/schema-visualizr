@@ -4,7 +4,6 @@ namespace LaraCare\SchemaVisualizr\Services;
 
 use LaraCare\SchemaVisualizr\Parsers\ModelParser;
 use ReflectionClass;
-use Illuminate\Support\Facades\File;
 
 class Diagram
 {
@@ -16,7 +15,7 @@ class Diagram
     }
 
     /**
-     * Generate UML class diagram for models and migrations.
+     * Generate UML class diagram for models with attributes and relationships.
      */
     public function generate(): string
     {
@@ -44,13 +43,12 @@ classDiagram
 
 EOT;
 
-        /**
-         * STEP 1: Extract from MODELS
-         */
+        // Step 1: Extract attributes and relationships
         foreach ($classes as $class) {
             $modelName = $class->getShortName();
             $modelFqn  = $class->getName();
 
+            // Skip if not Eloquent model
             if (!is_subclass_of($modelFqn, \Illuminate\Database\Eloquent\Model::class)) {
                 continue;
             }
@@ -58,21 +56,21 @@ EOT;
             $model = new $modelFqn();
             $fillable = $model->getFillable();
 
-            $models[$modelName] = [
-                'attributes' => $fillable,
-                'relations' => [],
-            ];
+            // Store attributes
+            $models[$modelName] = $fillable;
 
-            // Reflect relationships
+            // Use reflection to detect relationships
             $reflection = new ReflectionClass($modelFqn);
             foreach ($reflection->getMethods() as $method) {
-                if ($method->class !== $modelFqn) continue;
+                if ($method->class !== $modelFqn) {
+                    continue;
+                }
 
                 if ($method->getNumberOfParameters() === 0) {
                     try {
                         $result = $method->invoke($model);
                         if ($result instanceof \Illuminate\Database\Eloquent\Relations\Relation) {
-                            $relationType = class_basename(get_class($result));
+                            $relationType = class_basename(get_class($result)); // HasOne, BelongsTo...
                             $related = class_basename(get_class($result->getRelated()));
 
                             $relations[] = [
@@ -82,76 +80,26 @@ EOT;
                             ];
                         }
                     } catch (\Throwable $e) {
-                        // Skip uninvokable methods safely
+                        // Skip methods that cannot be invoked safely
                     }
                 }
             }
         }
 
-        /**
-         * STEP 2: Extract from MIGRATIONS
-         */
-        $migrationFiles = File::allFiles(database_path('migrations'));
-        foreach ($migrationFiles as $file) {
-            $content = File::get($file->getPathname());
-
-            // Match table name
-            if (preg_match("/Schema::create\(['\"](\w+)['\"]/", $content, $matches)) {
-                $tableName = $matches[1];
-                $className = ucfirst(\Illuminate\Support\Str::singular($tableName));
-
-                if (!isset($models[$className])) {
-                    $models[$className] = ['attributes' => [], 'relations' => []];
-                }
-
-                // Extract column names
-                preg_match_all("/->([a-zA-Z_]+)\(['\"](\w+)['\"]/", $content, $cols);
-                if (!empty($cols[2])) {
-                    foreach ($cols[2] as $col) {
-                        if (!in_array($col, $models[$className]['attributes'])) {
-                            $models[$className]['attributes'][] = $col;
-                        }
-                    }
-                }
-
-                // Detect foreign keys
-                preg_match_all("/->foreignId\(['\"](\w+_id)['\"]\)->constrained\(['\"]?(\w+)?['\"]?\)?/", $content, $fks);
-                if (!empty($fks[1])) {
-                    foreach ($fks[1] as $i => $fkColumn) {
-                        $relatedTable = $fks[2][$i] ?: \Illuminate\Support\Str::plural(str_replace('_id', '', $fkColumn));
-                        $relatedClass = ucfirst(\Illuminate\Support\Str::singular($relatedTable));
-
-                        $relations[] = [
-                            'from' => $className,
-                            'to' => $relatedClass,
-                            'type' => 'BelongsTo',
-                        ];
-                    }
-                }
-            }
-        }
-
-        /**
-         * STEP 3: Generate CLASS BLOCKS
-         */
-        foreach ($models as $model => $data) {
+        // Step 2: Generate class blocks
+        foreach ($models as $model => $attributes) {
             $uml .= "class {$model} {\n";
-            $attrs = $data['attributes'] ?? [];
-
-            if (!empty($attrs)) {
-                foreach ($attrs as $attr) {
+            if (!empty($attributes)) {
+                foreach ($attributes as $attr) {
                     $uml .= "    +{$attr}: string\n";
                 }
             } else {
-                $uml .= "    +[no attributes]\n";
+                $uml .= "    +[no fillable attributes]\n";
             }
-
             $uml .= "}\n\n";
         }
 
-        /**
-         * STEP 4: Generate RELATIONSHIPS
-         */
+        // Step 3: Generate relationships
         foreach ($relations as $relation) {
             $arrow = match ($relation['type']) {
                 'HasOne', 'HasMany' => "{$relation['from']} --> {$relation['to']} : {$relation['type']}",
