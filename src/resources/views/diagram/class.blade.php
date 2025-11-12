@@ -36,27 +36,12 @@
   <meta name="twitter:image:height" content="1080" />
   <link rel="shortcut icon" href="/favicon.png" />
   <meta name="next-size-adjust" />
-  <style>
-    .diagram-bg  {
-        background-color: #2d2d31;
-        opacity: 0.8;
-        background-image:  radial-gradient(#ffffff 0.5px, transparent 0.5px), radial-gradient(#ffffff 0.5px, #2d2d31 0.5px);
-        background-size: 20px 20px;
-        background-position: 0 0,10px 10px;
-    }
-  </style>  
-  
-  {{-- Script --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script> --}}
-    {{-- <script>
-        mermaid.initialize({ startOnLoad: true });
-    </script> --}}
 </head>
 
 
 <body class="bg-black undefined">
     <div class="from-zinc-900/0 via-zinc-900 to-zinc-900/0"
-    style="
+        style="
                 background-color: #2d2d31;
                 opacity: 0.8;
                 background-image:  radial-gradient(#ffffff 0.5px, transparent 0.5px), radial-gradient(#ffffff 0.5px, #2d2d31 0.5px);
