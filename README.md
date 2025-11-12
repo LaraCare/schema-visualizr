@@ -6,7 +6,7 @@ It helps developers, architects, and researchers instantly understand model attr
 
 # Features
 
-- Automatic Model Discovery: Scans all your Laravel model classes and extracts their structure via reflection.
+-- Automatic Model Discovery: Scans all your Laravel model classes and extracts their structure via reflection.
 - Migration Intelligence: Parses migration files to infer table names, columns, and foreign key relationships.
 - Relationship Detection: Identifies hasOne, hasMany, belongsTo, and belongsToMany relationships using runtime analysis.
 - Unified Schema Understanding: Combines information from both models and migrations for complete schema accuracy.
